@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internet Journey</title>
+      <link rel="icon" type="image/x-icon" href="./favicon-img.png">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle sr-only" aria-label="Toggle navigation menu">
+
+    <main id="main" class="main-wrapper">
+      <section id="hero">
+        <div class="hero-content">
+          <h1 class="hero-heading gradient-text">
+            <span class="line1">You typed a URL.</span><br>
+            <span class="line2">The internet woke up.</span>
+          </h1>
+          <div class="browser-bar glass" aria-hidden="true">
+            <span class="browser-icon">■</span>
+            <span class="browser-url">https://example.com</span>
+          </div>
+          <a href="#dns" class="cta-button">Explore the Journey &darr;</a>
+        </div>
+      </section>
+
+      <section id="dns">
+        <div class="grid-2col">
+          <div class="col-left dns-left">
+            <h2 class="section-heading">Where is this website?</h2>
+            <p class="body-text">Before loading the site, the browser needs to find its IP address. This is the Domain Name System (DNS) in action.</p>
+            <ol class="dns-list body-text">
+              <li style="--i: 1">Browser checks cache</li>
+              <li style="--i: 2">Asks DNS resolver</li>
+              <li style="--i: 3">Resolver queries root server</li>
+              <li style="--i: 4">Returns IP address</li>
+            </ol>
+          </div>
+          <div class="col-right dns-right">
+            <div class="dns-network" aria-hidden="true">
+              <div class="dns-line"></div>
+              <div class="packet-dot"></div>
+              <div class="dns-node glass"><span class="code-label">Browser</span></div>
+              <div class="dns-node glass"><span class="code-label">DNS Resolver</span></div>
+              <div class="dns-node glass"><span class="code-label">Root Server</span></div>
+              <div class="dns-node glass active"><span class="code-label">IP: 93.184.216.34</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="request">
+        <h2 class="section-heading" style="text-align: center; margin-bottom: 64px;">Server Communication</h2>
+        <div class="request-grid">
+          <div class="client-col">
+            <div class="browser-icon-large" aria-hidden="true">
+              <div class="browser-tabs">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+            </div>
+            <span class="code-label">Your Browser</span>
+          </div>
+
+          <div class="arrow-lane">
+            <div class="arrow-row top-row">
+              <span class="code-label arrow-label">HTTP GET /</span>
+              <div class="arrows">
+                <div class="arrow-right" style="--i: 1">▶</div>
+                <div class="arrow-right" style="--i: 2">▶</div>
+                <div class="arrow-right" style="--i: 3">▶</div>
+              </div>
+            </div>
+            <div class="arrow-row bottom-row">
+              <div class="arrows">
+                <div class="arrow-left" style="--i: 6">◀</div>
+                <div class="arrow-left" style="--i: 5">◀</div>
+                <div class="arrow-left" style="--i: 4">◀</div>
+              </div>
+              <span class="code-label arrow-label">200 OK</span>
+            </div>
+          </div>
+
+          <div class="server-col">
+            <div class="server-box" aria-hidden="true">
+              <div class="server-line"></div>
+              <div class="server-line"></div>
+              <div class="server-line">
+                <span class="server-led"></span>
+              </div>
+            </div>
+            <span class="code-label">example.com Server</span>
+          </div>
+        </div>
+        <div class="overlay-text">Status 200 OK</div>
+      </section>
+
+      <section id="data">
+        <h2 class="section-heading" style="text-align: center; margin-bottom: 48px;">Receiving Data</h2>
+
+        <div class="packet-vis" aria-hidden="true">
+          <div class="packet-square" style="--i: 1"></div>
+          <div class="packet-square" style="--i: 2"></div>
+          <div class="packet-square" style="--i: 3"></div>
+          <div class="packet-square" style="--i: 4"></div>
+          <div class="packet-square" style="--i: 5"></div>
+        </div>
+
+        <div class="cards-grid">
+          <div class="data-card glass" style="--i: 1">
+            <div class="card-icon">&lt;/&gt;</div>
+            <div class="card-name sub-heading">HTML</div>
+            <div class="card-size code-label">14 KB</div>
+          </div>
+          <div class="data-card glass" style="--i: 2">
+            <div class="card-icon">{}</div>
+            <div class="card-name sub-heading">CSS</div>
+            <div class="card-size code-label">8 KB</div>
+          </div>
+          <div class="data-card glass" style="--i: 3">
+            <div class="card-icon">■</div>
+            <div class="card-name sub-heading">Assets</div>
+            <div class="card-size code-label">1.2 MB</div>
+          </div>
+        </div>
+
+        <div class="transfer-container" aria-hidden="true">
+          <div class="transfer-label-row">
+            <div class="code-label">Transfer Progress</div>
+            <div class="code-label transfer-percent">100%</div>
+          </div>
+          <div class="transfer-bar-bg">
+            <div class="transfer-bar-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="render">
+        <h2 class="section-heading" style="text-align: center; margin-bottom: 48px;">Browser Rendering</h2>
+
+        <div class="pipeline-grid">
+          <div class="pipeline-step glass" style="--i: 1" data-tooltip="Converts raw HTML bytes into a Document Object Model (DOM) tree.">
+            <div class="step-icon">
+              <div class="css-lines"></div>
+              <div class="css-lines" style="width: 60%"></div>
+              <div class="css-lines" style="width: 80%"></div>
+            </div>
+            <span class="code-label">1. Parse HTML</span>
+          </div>
+          <div class="pipeline-arrow" style="--i: 1.5" aria-hidden="true">→</div>
+
+          <div class="pipeline-step glass" style="--i: 2" data-tooltip="Constructs the DOM and CSSOM trees to represent page structure and styles.">
+            <div class="step-icon tree-diagram">
+              <div class="tree-node"></div>
+              <div class="tree-branch">
+                <div class="tree-node"></div>
+                <div class="tree-node"></div>
+              </div>
+            </div>
+            <span class="code-label">2. Build DOM</span>
+          </div>
+          <div class="pipeline-arrow" style="--i: 2.5" aria-hidden="true">→</div>
+
+          <div class="pipeline-step glass" style="--i: 3" data-tooltip="Combines the DOM and CSSOM into a Render Tree, calculating exact layouts.">
+            <div class="step-icon color-boxes">
+              <div class="c-box" style="background: var(--color-accent)"></div>
+              <div class="c-box" style="background: var(--color-accent2)"></div>
+            </div>
+            <span class="code-label">3. Apply CSS</span>
+          </div>
+          <div class="pipeline-arrow" style="--i: 3.5" aria-hidden="true">→</div>
+
+          <div class="pipeline-step glass" style="--i: 4" data-tooltip="Draws the actual pixels to the screen based on the layout calculations.">
+            <div class="step-icon mini-page">
+              <div class="mp-header"></div>
+              <div class="mp-body"></div>
+            </div>
+            <span class="code-label">4. Paint UI</span>
+          </div>
+        </div>
+
+        <div class="render-stage" aria-hidden="true">
+          <div class="render-panel before-panel">
+            <span class="sub-heading" style="color: #000">Blank Canvas</span>
+          </div>
+          <div class="render-panel after-panel">
+            <div class="ap-header"></div>
+            <div class="ap-content">
+              <div class="ap-block"></div>
+              <div class="ap-block" style="width: 60%"></div>
+              <div class="ap-btn"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="finale">
+        <div class="finale-bg" aria-hidden="true"></div>
+        <div class="finale-content">
+          <h2 class="finale-heading">All of this happened in ~200ms.</h2>
+          <div class="finale-sub">
+            <span style="--i: 1">DNS lookup</span> &middot;
+            <span style="--i: 2">TCP handshake</span> &middot;
+            <span style="--i: 3">HTTP request</span> &middot;
+            <span style="--i: 4">Parse</span> &middot;
+            <span style="--i: 5">Render</span>
+          </div>
+
+          <div class="timeline-vis" aria-hidden="true">
+            <div class="timeline-line"></div>
+            <div class="timeline-fill"></div>
+            <div class="timeline-dots">
+              <div class="t-dot" style="--i: 1"><span class="code-label">DNS</span></div>
+              <div class="t-dot" style="--i: 2"><span class="code-label">TCP</span></div>
+              <div class="t-dot" style="--i: 3"><span class="code-label">HTTP</span></div>
+              <div class="t-dot" style="--i: 4"><span class="code-label">Parse</span></div>
+              <div class="t-dot" style="--i: 5"><span class="code-label">Render</span></div>
+            </div>
+          </div>
+
+          <div class="cta-group">
+            <a href="#hero" class="glass-btn">Back to Top</a>
+            <a href="https://github.com/Roughyyy08/InternetJourney.git" target="_blank" rel="noopener noreferrer" class="glass-btn" aria-label="View Source Code (opens in a new tab)">View Source Code</a>
+          </div>
+
+          <footer class="finale-footer">
+            <p class="body-text">Internet Journey &copy; 2026</p>
+          </footer>
+        </div>
+      </section>
+
+      <header class="main-header">
+        <div class="logo">Internet Journey</div>
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </label>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#hero" class="link-hero">Start</a>
+          <a href="#dns" class="link-dns">DNS</a>
+          <a href="#request" class="link-request">Request</a>
+          <a href="#data" class="link-data">Data</a>
+          <a href="#render" class="link-render">Render</a>
+          <a href="#finale" class="link-finale">Finale</a>
+        </nav>
+      </header>
+    </main>
+  </body>
+</html>
